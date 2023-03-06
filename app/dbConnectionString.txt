@@ -1,0 +1,1 @@
+mongodb+srv://rgenescu:RGenescu%40001@cluster0.bvbsyhb.mongodb.net/ReactCourse?retryWrites=true&w=majority
