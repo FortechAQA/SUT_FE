@@ -28,7 +28,7 @@ function HeaderLoggedOut() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-0 pt-2 pt-md-0">
+    <form onSubmit={handleSubmit} className="mb-0 pt-2 pt-md-0" data-cy="login-form">
       <div className="row align-items-center">
         <div className="col-md mr-0 pr-md-0 mb-3 mb-md-0">
           <input
@@ -41,6 +41,7 @@ function HeaderLoggedOut() {
             type="text"
             placeholder="Username"
             autoComplete="off"
+            data-cy="username"
           />
         </div>
         <div className="col-md mr-0 pr-md-0 mb-3 mb-md-0">
@@ -53,10 +54,13 @@ function HeaderLoggedOut() {
             className="form-control form-control-sm input-dark"
             type="password"
             placeholder="Password"
+            data-cy="password"
           />
         </div>
         <div className="col-md-auto">
-          <button id="login-submit" className="btn btn-success btn-sm">
+          <input type="checkbox" data-cy="remember-me" />
+          <span>Remember me</span>
+          <button id="login-submit" className="btn btn-success btn-sm" data-cy="submit">
             Sign In
           </button>
         </div>

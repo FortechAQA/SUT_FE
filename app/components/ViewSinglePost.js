@@ -81,11 +81,11 @@ function ViewSinglePost() {
         <h2 id="post-title">{post.title}</h2>
         {isOwner() && (
           <span className="pt-2">
-            <Link to={`/post/${post._id}/edit`} id="edit-post-btn" data-tip="Edit" data-for="edit" className="text-primary mr-2">
+            <Link to={`/post/${post._id}/edit`} data-cy="edit-post-btn" id="edit-post-btn" data-tip="Edit" data-for="edit" className="text-primary mr-2">
               <i className="fas fa-edit"></i>
             </Link>
             <ReactTooltip id="edit" className="custom-tooltip"></ReactTooltip>{" "}
-            <a className="delete-post-button text-danger" onClick={deleteHandler} data-tip="Delete" data-for="delete">
+            <a className="delete-post-button text-danger" data-cy="delete-post-btn" onClick={deleteHandler} data-tip="Delete" data-for="delete">
               <i className="fas fa-trash"></i>
             </a>
             <ReactTooltip id="delete" className="custom-tooltip"></ReactTooltip>

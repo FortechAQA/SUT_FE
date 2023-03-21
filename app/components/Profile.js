@@ -25,6 +25,11 @@ function Profile() {
     }
     fetchData();
   }, []);
+
+  function confirmInput() {
+    return alert("File uploaded successfully.");
+  }
+
   return (
     <Page title="Profile Screen">
       <h2>
@@ -32,6 +37,7 @@ function Profile() {
         <button className="btn btn-primary btn-sm ml-2">
           Follow <i className="fas fa-user-plus"></i>
         </button>
+        <input type="file" accept="image/png, image/jpeg" data-cy="upload-avatar" alt="avatar-image-alt" onInput={confirmInput}></input>
       </h2>
       <div className="profile-nav nav nav-tabs pt-2 mb-4">
         <a href="#" className="active nav-item nav-link">

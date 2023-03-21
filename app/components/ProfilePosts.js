@@ -12,7 +12,7 @@ function ProfilePosts() {
     async function fetchPosts() {
       try {
         const res = await Axios.get(`/profile/${username}/posts`);
-        console.log(res.data);
+        // console.log(res.data);
         setPosts(res.data);
         setIsLoading(false);
       } catch (error) {
@@ -30,8 +30,12 @@ function ProfilePosts() {
         const date = new Date(post.createdDate);
         const dateFormatted = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
         return (
-          <Link key={post._id} to={`/post/${post._id}`} className="list-group-item list-group-item-action" id="user-profile-post">
-            <img className="avatar-tiny" src={post.author.avatar} /> <strong id="post-tile-text">{post.title}</strong> <span className="text-muted small">on {dateFormatted} </span>
+          <Link key={post._id} to={`/post/${post._id}`} className="list-group-item list-group-item-action" id="user-profile-post" data-cy="user-profile-post">
+            <img className="avatar-tiny" src={post.author.avatar} />{" "}
+            <strong data-cy="post-tile-text" id="post-tile-text">
+              {post.title}
+            </strong>{" "}
+            <span className="text-muted small">on {dateFormatted} </span>
           </Link>
         );
       })}

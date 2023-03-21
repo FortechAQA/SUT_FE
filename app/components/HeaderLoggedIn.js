@@ -29,10 +29,10 @@ function HeaderLoggedIn() {
       </span>
       <ReactTooltip place="bottom" id="chat" className="custom-tooltip" />{" "}
       <Link data-for="profile" data-tip="My Profile" id="profile-link" className="mr-2" to={`/profile/${appState.user.username}`}>
-        <img id="account-avatar" className="small-header-avatar" src={appState.user.avatar} />
+        <img id="account-avatar" className="small-header-avatar" src={appState.user.avatar} data-cy="account-avatar" />
       </Link>
       <ReactTooltip place="bottom" id="profile" className="custom-tooltip" />{" "}
-      <Link className="btn btn-sm btn-success mr-2" to="/create-post" id="create-post-btn">
+      <Link className="btn btn-sm btn-success mr-2" to="/create-post" id="create-post-btn" data-cy="create-post-btn">
         Create Post
       </Link>{" "}
       <button onClick={handleLogout} className="btn btn-sm btn-secondary">
